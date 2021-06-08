@@ -1,5 +1,5 @@
 # qscmf-formitem-date-picker
-使用antd组件datePick开发的formType日期类组件
+使用 [antd组件DatePicker](https://ant.design/components/date-picker-cn/) 开发的formType日期类组件
 
 ## 安装
 
