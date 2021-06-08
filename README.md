@@ -44,6 +44,7 @@ composer require quansitech/qscmf-formitem-date-picker
 | 参数 | 说明 | 类型 | 默认值 |
 |:---------- |:----------|:----------|:----------|
 | valueSeparator | 值分隔符 | string | , |
+| order | 始末时间是否自动排序 | boolean | true |
 
 
 ```lebal
@@ -59,6 +60,20 @@ valueSeparator 说明
 ->addFormItem('time_range2', 'time_range', '时间范围2','',["valueSeparator" => " - "]) // 返回的值05:00:00 - 06:00:00
 ->setFormData(['time_range1'=>'05:00:00,06:00:00','time_range2' => '05:00:00 - 06:00:00'])
 ```
+
+
+```lebal
+order 说明
+当开始时间大于结束时间时，组件默认会互换两个时间的值。
+
+若需要开始时间大于结束时间，则将该值改为false。
+```
+
+```php
+->addFormItem('time_range', 'time_range', '时间范围','',["order" => false])
+->setFormData(['time_range' => '20:00,06:00']) // 表示晚上8点至次日凌晨6点
+```
+
 
 ### DateRange
 ```label

@@ -29,6 +29,7 @@ function QaTimeRangePicker(props){
                 size = { props.size }
                 format = { defaultFormat }
                 disabled = { props.disabled }
+                order = { props.order }
             />
         </div>
     );
@@ -44,6 +45,7 @@ function qaTimeRangePicker(id, opt){
         name: "",
         disabled: false,
         valueSeparator: ',',
+        order: true,
     };
     Object.assign(defaultOpt, opt);
 
@@ -57,6 +59,7 @@ function qaTimeRangePicker(id, opt){
             format = { defaultOpt.format }
             disabled = { defaultOpt.disabled }
             valueSeparator = { defaultOpt.valueSeparator }
+            order = { defaultOpt.order }
         />,
         document.getElementById(id),
     );
