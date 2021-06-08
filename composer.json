@@ -1,0 +1,29 @@
+{
+    "name": "quansitech/qscmf-formitem-date-picker",
+    "description": "antd qscmf formbuilder item datepicker",
+    "type": "library",
+    "keywords": ["qscmf", "component", "antd", "formbuilder", "datepicker"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xhiny",
+            "email": "axhiny@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "tiderjian/think-core": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FormItem\\DatePicker\\": "src/"
+        }
+    },
+    "extra": {
+        "qscmf": {
+            "providers": [
+                "FormItem\\DatePicker\\DatePickerProvider"
+            ]
+        }
+    }
+}

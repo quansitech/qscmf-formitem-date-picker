@@ -1,0 +1,25 @@
+<div class="form-group item_{$form.name} {$form.extra_class}">
+    <label class="left control-label">{$form.title}：</label>
+    <div class="right">
+        <div id="{$gid}">
+        </div>
+        <notempty name="form.tip">
+            <span class="check-tips small">{$form.tip}</span>
+        </notempty>
+        <notdefined name="qscmf-datepicker-time">
+        <% if (htmlWebpackPlugin.options.customInject) {%>
+            <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js %>"></script>
+        <% } %>
+            <define name="qscmf-datepicker-time" value="1" />
+        </notdefined>
+
+        <script>
+            jQuery(document).ready(function () {
+                var opt = {:json_encode($opt)};
+                QaDatePicker.qaTimePicker('{$gid}', opt); //第一个参数是需要渲染的dom id， 第二个参数为上面的配置对象
+            });
+        </script>
+
+    </div>
+</div>
+
