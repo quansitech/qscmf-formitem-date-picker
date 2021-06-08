@@ -4,7 +4,7 @@
 ## 安装
 
 ```php
-composer require qscmf-formitem-date-picker
+composer require quansitech/qscmf-formitem-date-picker
 ```
 
 ## 组件列表
