@@ -5,11 +5,13 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 import locale from 'antd/es/date-picker/locale/zh_CN';
 import 'antd/dist/antd.css';
+import RangeHelper from './range_helper';
 
 function QaTimeRangePicker(props){
-    const defaultValue = initDefaultValue(props.defaultValue, props.format);
-    const [hiddenInputValue, setHiddenInputValue] = useState( initHiddenDefaultValue(defaultValue,  props.format, props.valueSeparator) )
-    const onChange = (date, dateArr) => setHiddenInputValue(joinHiddenValueWithSep(dateArr, props.valueSeparator))
+    const defaultFormat = RangeHelper.resetFormatWithPickerType(props.format, props.picker, props.showTime)
+    const defaultValue = RangeHelper.initDefaultValue(props.defaultValue, defaultFormat);
+    const [hiddenInputValue, setHiddenInputValue] = useState( RangeHelper.initHiddenDefaultValue(defaultValue,  defaultFormat, props.valueSeparator) )
+    const onChange = (date, dateArr) => setHiddenInputValue(RangeHelper.joinHiddenValueWithSep(dateArr, props.valueSeparator))
 
     return (
         <div>
@@ -25,23 +27,11 @@ function QaTimeRangePicker(props){
                 allowClear = { props.allowClear }
                 inputReadOnly = { props.inputReadOnly }
                 size = { props.size }
-                format = { props.format }
+                format = { defaultFormat }
                 disabled = { props.disabled }
             />
         </div>
     );
-}
-
-function initDefaultValue(defaultValue, format){
-    return defaultValue.length === 2 ? [moment(defaultValue[0], format), moment(defaultValue[1], format)] : null;
-}
-
-function initHiddenDefaultValue(defaultValue, format, valueSeparator){
-    return defaultValue ? joinHiddenValueWithSep([defaultValue[0].format(format), defaultValue[1].format(format)], valueSeparator) : null
-}
-
-function joinHiddenValueWithSep(value, valueSeparator){
-    return value.join(valueSeparator);
 }
 
 function qaTimeRangePicker(id, opt){

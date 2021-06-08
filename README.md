@@ -23,9 +23,11 @@ composer require qscmf-formitem-date-picker
 ->addFormItem('time', 'time', '时间')
 ```
 
-```label
-通过修改form_item的options来修改选择器的属性，具体设置参考通用配置属性
-```
+通过修改form_item的options来修改选择器的属性，设置说明如下，其余参考通用配置属性。
+
+| 参数 | 说明 | 类型 | 默认值 |
+|:---------- |:----------|:----------|:----------|
+| placeholder | 输入框提示文字 | string | 请选择时间 |
 
 ### TimeRange
 ```label
@@ -93,8 +95,7 @@ valueSeparator 说明
 | defaultValue | 默认值 | string |  |
 | allowClear | 是否显示清除按钮 | boolean | true |
 | inputReadOnly | 设置输入框为只读 | boolean | true |
-| placeholder | 输入框提示文字 | string | 请选择时间 |
 | size | 输入框大小 | string，可选值 large I middle I small |  |
-| format | 设置日期格式 | string |  |
+| format | 设置日期格式 | string I [string,string] |  |
 | name | item名 | string |  |
 | disabled | 禁用 | boolean | false |

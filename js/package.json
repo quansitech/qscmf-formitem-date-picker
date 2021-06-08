@@ -5,6 +5,7 @@
     "build": "webpack --config config/webpack.dev.conf.js",
     "dev": "webpack --config config/webpack.dev.conf.js --watch"
   },
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
