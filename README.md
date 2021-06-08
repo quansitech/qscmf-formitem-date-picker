@@ -46,8 +46,8 @@ composer require qscmf-formitem-date-picker
 
 ```lebal
 valueSeparator 说明
-范围选择器的值默认使用 **,** 拼接，例如时间范围选择器的值为 *05:00:00,06:00:00*。
-可以通过配置该值来修改拼接符，如该值为 ** - ** ，则以上时间范围选择器返回的值为 *05:00:00 - 06:00:00*。
+范围选择器的值默认使用,拼接，例如时间范围选择器的值为 05:00:00,06:00:00。
+可以通过配置该值来修改拼接符，如该值为 - ，则以上时间范围选择器返回的值为 05:00:00 - 06:00:00。
 
 传值给范围选择器时，拼接符应该一致，否则初始化值为null。
 ```
@@ -76,6 +76,13 @@ valueSeparator 说明
 | showTime | 增加时间选择功能 | boolean | false |
 | valueSeparator | 值分隔符 | string | , |
 
+```php
+->addFormItem('datetime_range', 'date_range', '日期时间范围','',["showTime" => true])
+->addFormItem('week_range', 'date_range', '周范围','',["picker" => "week"])
+->addFormItem('month_range', 'date_range', '月范围','',["picker" => "month"])
+->addFormItem('quarter_range', 'date_range', '季度范围','',["picker" => "quarter"])
+->addFormItem('year_range', 'date_range', '年范围','',["picker" => "year"])
+```
 
 ***
 
@@ -86,7 +93,7 @@ valueSeparator 说明
 | defaultValue | 默认值 | string |  |
 | allowClear | 是否显示清除按钮 | boolean | true |
 | inputReadOnly | 设置输入框为只读 | boolean | true |
-| placeholder | 输入框提示文字 | string | "请选择时间" |
+| placeholder | 输入框提示文字 | string | 请选择时间 |
 | size | 输入框大小 | string，可选值 large I middle I small |  |
 | format | 设置日期格式 | string |  |
 | name | item名 | string |  |
