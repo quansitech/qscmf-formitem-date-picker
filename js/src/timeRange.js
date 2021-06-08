@@ -6,6 +6,7 @@ import 'moment/locale/zh-cn';
 import locale from 'antd/es/date-picker/locale/zh_CN';
 import 'antd/dist/antd.css';
 import RangeHelper from './range_helper';
+import Utils from './utils';
 
 function QaTimeRangePicker(props){
     const defaultFormat = RangeHelper.resetFormatWithPickerType(props.format, props.picker, props.showTime)
@@ -24,12 +25,12 @@ function QaTimeRangePicker(props){
                 onChange = { onChange }
                 locale = { locale }
                 defaultValue = { defaultValue }
-                allowClear = { props.allowClear }
-                inputReadOnly = { props.inputReadOnly }
+                allowClear = { Utils.transcodeBoolByStr(props.allowClear) }
+                inputReadOnly = { Utils.transcodeBoolByStr(props.inputReadOnly) }
                 size = { props.size }
                 format = { defaultFormat }
-                disabled = { props.disabled }
-                order = { props.order }
+                disabled = { Utils.transcodeBoolByStr(props.disabled) }
+                order = { Utils.transcodeBoolByStr(props.order) }
             />
         </div>
     );

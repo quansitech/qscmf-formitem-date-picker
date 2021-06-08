@@ -6,7 +6,7 @@ import 'moment/locale/zh-cn';
 import locale from 'antd/es/date-picker/locale/zh_CN';
 import 'antd/dist/antd.css';
 import RangeHelper from './range_helper';
-
+import Utils from "./utils";
 
 const { RangePicker } = DatePicker;
 
@@ -27,13 +27,13 @@ function QaDateRangePicker(props){
                 onChange = { onChange }
                 locale = { locale }
                 defaultValue = { defaultValue }
-                allowClear = { props.allowClear }
-                inputReadOnly = { props.inputReadOnly }
+                allowClear = { Utils.transcodeBoolByStr(props.allowClear) }
+                inputReadOnly = { Utils.transcodeBoolByStr(props.inputReadOnly) }
                 size = { props.size }
                 format = { defaultFormat }
-                disabled = { props.disabled }
+                disabled = { Utils.transcodeBoolByStr(props.disabled) }
                 picker = { props.picker }
-                showTime = { props.showTime }
+                showTime = { Utils.transcodeBoolByStr(props.showTime) }
             />
         </div>
     );

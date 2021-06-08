@@ -4,6 +4,7 @@ import { TimePicker, Input } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
 import locale from 'antd/es/date-picker/locale/zh_CN';
+import Utils from './utils';
 
 import 'antd/dist/antd.css';
 // import 'antd/lib/time-picker/style/index.css';
@@ -25,12 +26,12 @@ function QaTimePicker(props){
                 onChange = { onChange }
                 locale = { locale }
                 defaultValue = { defaultValue }
-                allowClear = { props.allowClear }
-                inputReadOnly = { props.inputReadOnly }
+                allowClear = { Utils.transcodeBoolByStr(props.allowClear) }
+                inputReadOnly = { Utils.transcodeBoolByStr(props.inputReadOnly) }
                 placeholder = { props.placeholder }
                 size = { props.size }
                 format = { props.format }
-                disabled = { props.disabled }
+                disabled = { Utils.transcodeBoolByStr(props.disabled) }
             />
         </div>
     );
