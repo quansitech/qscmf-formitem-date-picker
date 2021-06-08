@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
       new CleanWebpackPlugin(),
-      // new BundleAnalyzerPlugin(),
+      new BundleAnalyzerPlugin(),
       new HtmlWebpackPlugin({
         filename: path.join(
             ROOT_PATH,
