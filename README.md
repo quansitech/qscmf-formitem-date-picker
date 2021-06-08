@@ -41,7 +41,7 @@ composer require qscmf-formitem-date-picker
 
 | 参数 | 说明 | 类型 | 默认值 |
 |:---------- |:----------|:----------|:----------|
-| valueSeparator | 值分隔符 | string | "," |
+| valueSeparator | 值分隔符 | string | , |
 
 
 ```lebal
@@ -74,7 +74,7 @@ valueSeparator 说明
 |:---------- |:----------|:----------|:----------|
 | picker | 设置选择器类型 | string，可选值 date I week I month I quarter I year | date |
 | showTime | 增加时间选择功能 | boolean | false |
-| valueSeparator | 值分隔符 | string | "," |
+| valueSeparator | 值分隔符 | string | , |
 
 
 
